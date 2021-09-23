@@ -8,7 +8,7 @@ export default class Header extends Component {
             <div>
                 <Title />
                 <SearchSort 
-                handleSelectKeyword = {this.props.handleSelectKeyword}
+                handleSearch={this.props.handleSearch}
                 />
             </div>
         )
