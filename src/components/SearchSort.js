@@ -5,7 +5,7 @@ export default class SearchSort extends Component {
         return (
             <div>
                 <form onSubmit={this.props.handleSearch}>
-                    <input />
+                    <input onChange={this.props.handleChange}/>
                     <button>Search</button>
                 </form>
             </div>

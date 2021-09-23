@@ -9,7 +9,9 @@ export default class PokeList extends Component {
 
                 this.props.pokemonData
                 .map( pokebaby => 
+
                     <PokeItem {...pokebaby} 
+
                     key={pokebaby._id} />)
                 }
             </div>

@@ -9,32 +9,49 @@ export default class PokeGallery extends React.Component {
 
         pokemonData: [],
         searchParam: '',
-        loading: false,
+        areWeLoading: false,
 
         }
 
     componentDidMount = async () => {
-
-        const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}`);
-
-        this.setState({pokemonData: response.body.results})
-
+        this.fetchUserSearch();
     }
     
-    handleSearch = (e) => {
-
+    handleChange = (e) => {
         e.preventDefault();
-
         this.setState({searchParam: e.target.value});
+        console.log(this.state.searchParam)
+    }
 
+    handleSearch = (e) => {
+        e.preventDefault();
+        this.fetchUserSearch();
+    }
+
+    fetchUserSearch = async () => {
+
+        try {
+            this.setState({ areWeLoading: true })
+
+            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}`);
+
+            this.setState({
+                pokemonData: response.body.results,
+                areWeLoading: false
+            })
+
+        } catch(e) {
+                this.setState({ isLoading: false });
         }
+    }
 
     render() {
-        console.log(this.state.pokemonData)
+        
         return (
             <div>
                 <Header
                 handleSearch = {this.handleSearch}
+                handleChange = {this.handleChange}
                 />
                 <PokeList
                 pokemonData = {this.state.pokemonData}

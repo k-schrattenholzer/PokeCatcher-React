@@ -9,7 +9,7 @@ export default class Header extends Component {
                 <Title />
                 <SearchSort 
                 handleSearch={this.props.handleSearch}
-                />
+                handleChange={this.props.handleChange}                />
             </div>
         )
     }
