@@ -9,8 +9,8 @@ export default class Loading extends Component {
                 <Loader 
                 type="Hearts" 
                 color="#FFFFFF" 
-                height={50} 
-                width={50} />
+                height={400} 
+                width={400} />
                 <h1>fetching poké babies</h1>
             </div>
         )

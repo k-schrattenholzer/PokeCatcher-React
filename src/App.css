@@ -1,18 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+:root{
+  --darkcolor: #3C403D;
+  --transparenthead: #97782456;
+  --lightcolor: #DADED4;
+  --font:'Press Start 2P', cursive;
+}
+
 body {
   display: flex;
   justify-content: center;
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', cursive;
-  color: #3C403D;
+  font-family: var(--font);
+  color: var(--darkcolor);
   background-color: #DADED4; 
 }
 
 h1 {
   font-size: 3.5rem;
   letter-spacing: 2rem;
+}
+
+.Loading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .PokeGallery {
@@ -31,7 +44,7 @@ h1 {
   padding-top: 0px;
   display: flex;
   flex-direction: row;
-  background-color: #97782456; 
+  background-color: var(--transparenthead); 
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.267);
   justify-content: center;
   align-items: center;
@@ -53,14 +66,14 @@ h1 {
 }
 
 select {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font);
   padding:5px;
   border-radius: 15px;
   margin: 15px;
 }
 
 button, input {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font);
   padding:5px;
   border-radius: 15px;
   margin: 15px;
@@ -82,8 +95,7 @@ button, input {
   padding: 15px;
   margin: 40px;
   width: min-content;
-  /* border:#3C403D .5px dashed; */
-  border: 1px solid black;
+  border:var(--darkcolor) 4px double;
   box-shadow:
   0 0 50px #fff,
   -10px 0 40px rgb(255, 51, 0),
@@ -100,14 +112,14 @@ button, input {
   align-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 1px solid #3C403D;
+  border: 1px solid var(--darkcolor);
   border-radius: 35px;
   
 }
 
 p {
-  color: #DADED4;
-  background-color: #3C403D;
+  color: var(--lightcolor);
+  background-color: var(--darkcolor);
   font-size: 30%;
   /* margin-top:0px;
   margin-bottom: 0px; */
@@ -132,130 +144,4 @@ img {
 
 .App {
   text-align: center;
-}
-
-/* ============================================ */
-
-@media only screen and (min-width: 300px){
-
-h1 {
-  font-size: 3.5rem;
-  letter-spacing: 2rem;
-}
-
-.PokeGallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.HContainer {
-  position:fixed;
-  z-index: max;
-  height: 8rem;
-  width: 100%;
-  margin: 1%;
-  margin-top: 0px;
-  padding-top: 0px;
-  display: flex;
-  flex-direction: row;
-  background-color: #97782456; 
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.267);
-  justify-content: center;
-  align-items: center;
-}
-
-.SearchSort {
-  margin: 5%;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.Sort {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-}
-
-select {
-  font-family: 'Press Start 2P', cursive;
-  padding:5px;
-  border-radius: 15px;
-  margin: 15px;
-}
-
-button, input {
-  font-family: 'Press Start 2P', cursive;
-  padding:5px;
-  border-radius: 15px;
-  margin: 15px;
-}
-.PokeDiv {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 0px;
-  margin-left: 20px;
-  margin-top: 150px;
-}
-
-.PokeEl {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  margin: 40px;
-  width: min-content;
-  /* border:#3C403D .5px dashed; */
-  border: 1px solid black;
-  box-shadow:
-  0 0 50px #fff,
-  -10px 0 40px rgb(255, 51, 0),
-  10px 0 40px #0ff;
-  border-radius: 35px;
-}
-/* /////////////////////////// */
-/* glowing effect based on https://codersblock.com/blog/creating-glow-effects-with-css/ */
-
-
-.Stats {
-  display: flex;
-  justify-items: center;
-  align-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  border: 1px solid #3C403D;
-  border-radius: 35px;
-  
-}
-
-p {
-  color: #DADED4;
-  background-color: #3C403D;
-  font-size: 30%;
-  /* margin-top:0px;
-  margin-bottom: 0px; */
-  width: 12rem;
-  margin: 15px;
-  border-radius: 35px;
-  padding: 12px;
-  line-height: 200%;
-}
-
-h2 {
-  font-size: 1rem;
-  margin-bottom: 25px;
-}
-
-
-img {
-  height: 6rem;
-  padding:20px;
-  border-radius: 60px
-}
-
 }
