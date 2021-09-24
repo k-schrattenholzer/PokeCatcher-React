@@ -10,7 +10,7 @@ export default class PokeGallery extends React.Component {
         pokemonData: [],
         searchParam: '',
         sortOrder:'asc',
-        sortParam: 'pokemon',
+        sortParam: '_id',
         areWeLoading: false,
         page: 1
         }
@@ -47,7 +47,9 @@ export default class PokeGallery extends React.Component {
     }
 
     handleSortType = async (e) => {
-        await this.setState({sortParam: e.target.value});
+        await this.setState({
+            sortParam: e.target.value
+        });
         this.fetchUserSearch();
     }
 
