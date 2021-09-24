@@ -16,7 +16,7 @@ export default class PokeGallery extends React.Component {
         }
 
     componentDidMount = async () => {
-        this.fetchUserSearch();
+       await this.fetch();
     }
     
     handleChange = (e) => {
@@ -26,34 +26,42 @@ export default class PokeGallery extends React.Component {
 
     handleSearch = (e) => {
         e.preventDefault();
-        this.fetchUserSearch();
+        this.fetch();
     }
 
     handleSortParam = async (e) => {
         await this.setState({sortParam: e.target.value});
-        this.fetchUserSearch();
+        this.fetch();
     }
 
     handlePageClick = async (e) => {
         e.preventDefault();
         await this.setState({page: e.target.value});
-        this.fetchUserSearch();
+        this.fetch();
     }
 
     handleSortOrder = async (e) => {
         e.preventDefault();
         await this.setState({sortOrder: e.target.value});
-        this.fetchUserSearch();
+        this.fetch();
     }
 
-    handleSortType = async (e) => {
+    handleSortBy = async (e) => {
         await this.setState({
             sortParam: e.target.value
         });
-        this.fetchUserSearch();
+       await this.fetch();
     }
 
-    fetchUserSearch = async () => {
+    handleReset = async (e) => {
+        this.setState ({ 
+            searchParam: '',
+            sortOrder:'asc',
+            sortParam: 'pokemon', })
+        await this.fetch()
+    }
+
+    fetch = async () => {
 
         try {
             this.setState({ areWeLoading: true })
@@ -78,7 +86,8 @@ export default class PokeGallery extends React.Component {
                 handleSearch={this.handleSearch}
                 handleChange={this.handleChange}
                 handleSortOrder={this.handleSortOrder}
-                handleSortType={this.handleSortType}
+                handleSortBy={this.handleSortBy}
+                handleReset={this.handleReset}
                 />
                 {
                     this.state.areWeLoading

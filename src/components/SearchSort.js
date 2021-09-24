@@ -12,6 +12,10 @@ export default class SearchSort extends Component {
                     <button>Search</button>
 
                 </form>
+                <button
+                onClick={this.props.handleReset}>
+                    reset
+                </button>
                 <div className="Sort">
                 sort:
                 <SortDropDown
