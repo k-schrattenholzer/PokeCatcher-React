@@ -68,7 +68,7 @@ h1 {
   0 0 50px #fff,
   -10px 0 40px rgb(255, 51, 0),
   10px 0 40px #0ff;
-  border-radius: 20%;
+  border-radius: 35px;
 }
 /* /////////////////////////// */
 /* glowing effect based on https://codersblock.com/blog/creating-glow-effects-with-css/ */
