@@ -13,11 +13,12 @@ export default class SearchSort extends Component {
 
                 </form>
                 <button
+                className="ResetButton"
                 onClick={this.props.handleReset}>
                     reset
                 </button>
                 <div className="Sort">
-                sort:
+                <p>order</p>
                 <SortDropDown
                     options={[
                         'asc',
@@ -26,7 +27,7 @@ export default class SearchSort extends Component {
                     optionValue=''
                     handleSort={this.props.handleSortOrder}/>
 
-                sort by:
+                <p>by</p>
                 <SortDropDown
                     options={[
                         'pokemon',
