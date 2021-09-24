@@ -1,13 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+:root{
+  --darkercolor: #3C403D;
+  --darkcolor: #8d8491;
+  --transparenthead: #24979167;
+  --lightercolor: #e4ebdb;
+  --lightcolor: #c4c7bf;
+  --font:'Press Start 2P', cursive;
+}
+
 body {
   display: flex;
   justify-content: center;
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', cursive;
-  color: #3C403D;
-  background-color: #DADED4; 
+  font-family: var(--font);
+  color: var(--darkercolor);
+  background-color:var(--darkcolor); 
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2rem;
+}
+
+.Loading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .PokeGallery {
@@ -17,20 +37,27 @@ body {
 }
 
 .HContainer {
-  width: 70%;
+  position:fixed;
+  z-index: max;
+  height: 8rem;
+  width: 100%;
+  margin: 1%;
+  margin-top: 0px;
+  padding-top: 0px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  background-color: var(--transparenthead); 
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.267);
+  justify-content: center;
+  align-items: center;
 }
 
 .SearchSort {
-  margin-top: 2.5%;
+  margin: 5%;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: space-between;
-  align-content: space-around;
 }
 
 .Sort {
@@ -40,13 +67,27 @@ body {
 
 }
 
+select {
+  font-family: var(--font);
+  padding:5px;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+button, input {
+  font-family: var(--font);
+  padding:5px;
+  border-radius: 15px;
+  margin: 15px;
+}
 .PokeDiv {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   padding: 0px;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 150px;
+
 }
 
 .PokeEl {
@@ -57,8 +98,13 @@ body {
   padding: 15px;
   margin: 40px;
   width: min-content;
-  border:#3C403D .5px dashed;
-  border-radius: 20%;
+  border:var(--darkercolor) 4px double;
+  box-shadow:
+  0 0 50px #fff,
+  -10px 0 40px rgb(255, 51, 0),
+  10px 0 40px #0ff;
+  border-radius: 35px;
+  background-color: var(--lightcolor);
 }
 /* /////////////////////////// */
 /* glowing effect based on https://codersblock.com/blog/creating-glow-effects-with-css/ */
@@ -70,36 +116,36 @@ body {
   align-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 1px solid #3C403D;
+  border: 1px solid var(--darkercolor);
   border-radius: 35px;
   
 }
 
-.Stats >p {
-  color: #DADED4;
-  font-size: 25%;
-  margin-top:0px;
-  width: max-content;
+p {
+  color: var(--lightercolor);
+  background-color: var(--darkercolor);
+  font-size: 30%;
+  /* margin-top:0px;
+  margin-bottom: 0px; */
+  width: 12rem;
+  margin: 15px;
+  border-radius: 35px;
   padding: 12px;
+  line-height: 200%;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: 25px;
 }
 
 
 img {
   height: 12rem;
   padding:20px;
-  border-radius: 60px;
-  box-shadow:
-  inset -20px -20px 60px #fff,
-  inset 10px 0 60px rgb(255, 51, 0),
-  inset -10px 0 60px #0ff,
-  inset -10px 0 40px rgb(255, 51, 0),
-  inset -10px 0 40px #0ff,
-  0 0 50px #fff,
-  -10px 0 40px rgb(255, 51, 0),
-  10px 0 40px #0ff;
+  border-radius: 60px
 }
 
 .App {
   text-align: center;
 }
-

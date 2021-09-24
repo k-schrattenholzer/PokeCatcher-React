@@ -1,0 +1,19 @@
+
+div {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.Home {
+    display: flex;
+    position: relative;
+    top: 100%;
+    left: 5%;
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

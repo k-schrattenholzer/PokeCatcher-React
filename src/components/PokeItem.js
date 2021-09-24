@@ -4,7 +4,7 @@ export default class PokeItem extends Component {
     render() {
         return (
             <div className='PokeEl' >
-                <p>{this.props.pokemon}</p>
+                <h2>{this.props.pokemon}</h2>
                 <a 
                 href={this.props.pokedex} 
                 target="_blank" 

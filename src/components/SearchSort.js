@@ -18,7 +18,7 @@ export default class SearchSort extends Component {
                         'asc',
                         'desc'
                     ]}
-                    optionValue='Sort'
+                    optionValue='sort'
                     handleSort={this.props.handleSortOrder}/>
 
                 
@@ -43,7 +43,7 @@ export default class SearchSort extends Component {
                           'steel',
                           'water'
                       ]}
-                    optionValue='Filter Type'
+                    optionValue='filter type'
                     handleSort={this.handleSortType} />
                 </div>
             </div>
