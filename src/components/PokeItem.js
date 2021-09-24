@@ -22,8 +22,10 @@ export default class PokeItem extends Component {
                     {backgroundColor: `${this.props.color_1}`,
                     margin: '10px'
                     }}>
-                    <p>type:{this.props.type_1}</p>
-                    <p>special ability:{this.props.ability_1}</p> 
+                    <p
+                    className='StatEl'>type:{this.props.type_1}</p>
+                    <p
+                    className='StatEl'>special ability:{this.props.ability_1}</p> 
                 </div>
             </div>
         )

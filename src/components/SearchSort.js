@@ -12,39 +12,31 @@ export default class SearchSort extends Component {
                     <button>Search</button>
 
                 </form>
+                <button
+                className="ResetButton"
+                onClick={this.props.handleReset}>
+                    reset
+                </button>
                 <div className="Sort">
+                <p>order</p>
                 <SortDropDown
                     options={[
                         'asc',
                         'desc'
-                    ]}
-                    optionValue='sort'
+                        ]}
+                    optionValue=''
                     handleSort={this.props.handleSortOrder}/>
 
-                
+                <p>by</p>
                 <SortDropDown
                     options={[
-                          'bug',
-                          'dark',
-                          'dragon',
-                          'electric',
-                          'fairy',
-                          'fighting',
-                          'fire',
-                          'flying',
-                          'ghost',
-                          'grass',
-                          'ground',
-                          'ice',
-                          'normal',
-                          'poison',
-                          'psychic',
-                          'rock',
-                          'steel',
-                          'water'
-                      ]}
-                    optionValue='filter type'
-                    handleSort={this.handleSortType} />
+                        'pokemon',
+                        'type',
+                        'shape',
+                        'ability'
+                        ]}
+                    optionValue=''
+                    handleSort={this.props.handleSortType} />
                 </div>
             </div>
         )
