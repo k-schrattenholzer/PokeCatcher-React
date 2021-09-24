@@ -35,6 +35,12 @@ export default class PokeGallery extends React.Component {
         this.fetchUserSearch();
     }
 
+    handleSortType = async (e) => {
+        e.preventDefault();
+        await this.setState({sortOrder: e.target.value});
+        this.fetchUserSearch();
+    }
+
     fetchUserSearch = async () => {
 
         try {
