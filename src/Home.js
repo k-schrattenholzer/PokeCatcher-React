@@ -6,10 +6,10 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <h1>Honeyyy We're Home!</h1>
+                <h1>Wanna see some pokés?</h1>
                 
                 <Link to='/gallery'>
-                  check out the gallery  
+                  check out the pokedex  
                 </Link>
             </div>
         )

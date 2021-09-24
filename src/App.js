@@ -22,7 +22,7 @@ export default class App extends Component {
                         <Route 
                             path="/Gallery" 
                             exact
-                            render={(routerProps) => <Gallery {...routerProps} />} 
+                            render={(routerProps) => <PokeGallery {...routerProps} />} 
                         />
                     </Switch>
                 </Router>
