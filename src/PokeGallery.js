@@ -10,7 +10,7 @@ export default class PokeGallery extends React.Component {
         pokemonData: [],
         searchParam: '',
         sortOrder:'asc',
-        sortParam: '_id',
+        sortParam: 'pokemon',
         areWeLoading: false,
         page: 1
         }
