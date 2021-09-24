@@ -37,7 +37,7 @@ h1 {
 }
 
 .HContainer {
-  position:fixed;
+  position: fixed;
   z-index: max;
   height: 8rem;
   width: 100%;
@@ -45,15 +45,15 @@ h1 {
   margin-top: 0px;
   padding-top: 0px;
   display: flex;
-  flex-direction: row;
-  background-color: var(--transparenthead); 
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.267);
+  background-color: var(--transparenthead);
+  box-shadow: 0 0 50px rgb(255 255 255 / 27%);
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
   justify-content: center;
-  align-items: center;
 }
 
 .SearchSort {
-  margin: 5%;
   padding: 0px;
   display: flex;
   flex-direction: column;
@@ -97,7 +97,7 @@ button, input {
   align-items: center;
   padding: 15px;
   margin: 40px;
-  width: min-content;
+  width: 15rem;
   border:var(--darkercolor) 4px double;
   box-shadow:
   0 0 50px #fff,

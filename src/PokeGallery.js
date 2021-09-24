@@ -11,7 +11,7 @@ export default class PokeGallery extends React.Component {
         pokemonData: [],
         searchParam: '',
         sortOrder:'asc',
-        type: 'pokemon',
+        sortParam: 'pokemon',
         areWeLoading: false,
         page: 1
         }
@@ -30,15 +30,8 @@ export default class PokeGallery extends React.Component {
         this.fetchUserSearch();
     }
 
-    handleSortOrder = async (e) => {
-        e.preventDefault();
-        await this.setState({sortOrder: e.target.value});
-        this.fetchUserSearch();
-    }
-
-    handleSortType = async (e) => {
-        e.preventDefault();
-        await this.setState({type: e.target.value});
+    handleSortParam = async (e) => {
+        await this.setState({sortParam: e.target.value});
         this.fetchUserSearch();
     }
 
@@ -48,12 +41,18 @@ export default class PokeGallery extends React.Component {
         this.fetchUserSearch();
     }
 
+    handleSortOrder = async (e) => {
+        e.preventDefault();
+        await this.setState({sortOrder: e.target.value});
+        this.fetchUserSearch();
+    }
+
     fetchUserSearch = async () => {
 
         try {
             this.setState({ areWeLoading: true })
 
-            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}&sort=${this.state.type}&direction=${this.state.sortOrder}&page=1&perPage=900`);
+            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}&sort=${this.state.sortParam}&direction=${this.state.sortOrder}&page=1&perPage=900`);
 
             this.setState({
                 pokemonData: response.body.results,
@@ -73,7 +72,7 @@ export default class PokeGallery extends React.Component {
                 handleSearch={this.handleSearch}
                 handleChange={this.handleChange}
                 handleSortOrder={this.handleSortOrder}
-                handleSortType={this.handleSortType}
+                handleSortType={this.handleSortParam}
                 />
                 {
                     this.state.areWeLoading
