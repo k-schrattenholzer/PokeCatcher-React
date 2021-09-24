@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.Loading {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    justify-content: center;
+    align-content: center;}

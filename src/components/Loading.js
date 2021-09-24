@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import Loader from 'react-loader-spinner'
+import './Component.css'
 
 export default class Loading extends Component {
     render() {
         return (
-            <div>
-                
+            <div className="Loading">
                 <Loader 
                 type="Hearts" 
                 color="#FFFFFF" 
