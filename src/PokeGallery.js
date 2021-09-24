@@ -9,6 +9,8 @@ export default class PokeGallery extends React.Component {
 
         pokemonData: [],
         searchParam: '',
+        sortOrder:'asc',
+        type: 'pokemon',
         areWeLoading: false,
 
         }
@@ -20,11 +22,16 @@ export default class PokeGallery extends React.Component {
     handleChange = (e) => {
         e.preventDefault();
         this.setState({searchParam: e.target.value});
-        console.log(this.state.searchParam)
     }
 
     handleSearch = (e) => {
         e.preventDefault();
+        this.fetchUserSearch();
+    }
+
+    handleSortOrder = async (e) => {
+        e.preventDefault();
+        await this.setState({sortOrder: e.target.value});
         this.fetchUserSearch();
     }
 
@@ -33,7 +40,7 @@ export default class PokeGallery extends React.Component {
         try {
             this.setState({ areWeLoading: true })
 
-            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}`);
+            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}&sort=${this.state.type}&direction=${this.state.sortOrder}`);
 
             this.setState({
                 pokemonData: response.body.results,
@@ -48,14 +55,20 @@ export default class PokeGallery extends React.Component {
     render() {
         
         return (
-            <div>
+            <div className='PokeGallery'>
                 <Header
-                handleSearch = {this.handleSearch}
-                handleChange = {this.handleChange}
+                handleSearch={this.handleSearch}
+                handleChange={this.handleChange}
+                handleSortOrder={this.handleSortOrder}
                 />
-                <PokeList
-                pokemonData = {this.state.pokemonData}
-                />
+                {
+                    this.state.areWeLoading
+                    ? <h1>fetching poké babies</h1>
+                    : <PokeList
+                        pokemonData = {this.state.pokemonData}
+                        areWeLoading = {this.state.areWeLoading}/>
+                }
+                
             </div>
         )
     }

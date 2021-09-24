@@ -5,11 +5,12 @@ import Title from './Title.js'
 export default class Header extends Component {
     render() {
         return (
-            <div>
+            <div className="HContainer">
                 <Title />
                 <SearchSort 
                 handleSearch={this.props.handleSearch}
-                handleChange={this.props.handleChange}                />
+                handleChange={this.props.handleChange}
+                handleSortOrder={this.props.handleSortOrder}/>
             </div>
         )
     }
