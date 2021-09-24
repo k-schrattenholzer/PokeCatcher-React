@@ -12,8 +12,9 @@ export default class PokeItem extends Component {
                     <img 
                     src={this.props.url_image} 
                     alt={this.props.pokemon}
-                    style={
-                        {border: `5px solid ${this.props.color_1}`}}/> 
+                    // style={
+                    //     {border: `5px solid ${this.props.color_1}`}}
+                        /> 
                 </a>
                  
                 <div className='Stats'
@@ -22,7 +23,6 @@ export default class PokeItem extends Component {
                     margin: '10px'
                     }}>
                     <p>type:{this.props.type_1}</p>
-                    <hr /> 
                     <p>special ability:{this.props.ability_1}</p> 
                 </div>
             </div>

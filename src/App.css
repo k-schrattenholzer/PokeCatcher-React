@@ -10,13 +10,43 @@ body {
   background-color: #DADED4; 
 }
 
+.PokeGallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.HContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.SearchSort {
+  margin-top: 2.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  align-content: space-around;
+}
+
+.Sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
 .PokeDiv {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   padding: 0px;
-  margin-left: 100px;
-
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .PokeEl {
@@ -25,11 +55,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  margin: 2px;
-  width: 30%;
+  margin: 40px;
+  width: min-content;
   border:#3C403D .5px dashed;
   border-radius: 20%;
 }
+/* /////////////////////////// */
+/* glowing effect based on https://codersblock.com/blog/creating-glow-effects-with-css/ */
+
 
 .Stats {
   display: flex;
@@ -39,6 +72,7 @@ body {
   flex-wrap: wrap;
   border: 1px solid #3C403D;
   border-radius: 35px;
+  
 }
 
 .Stats >p {
@@ -54,6 +88,15 @@ img {
   height: 12rem;
   padding:20px;
   border-radius: 60px;
+  box-shadow:
+  inset -20px -20px 60px #fff,
+  inset 10px 0 60px rgb(255, 51, 0),
+  inset -10px 0 60px #0ff,
+  inset -10px 0 40px rgb(255, 51, 0),
+  inset -10px 0 40px #0ff,
+  0 0 50px #fff,
+  -10px 0 40px rgb(255, 51, 0),
+  10px 0 40px #0ff;
 }
 
 .App {
