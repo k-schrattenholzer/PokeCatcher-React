@@ -19,15 +19,32 @@ export default class SearchSort extends Component {
                     'desc'
                 ]}
                 optionValue='Sort'
-                handleSortOrder={this.props.handleSortOrder}
+                handleSort={this.props.handleSortOrder}
                 />
 
                 <SortDropDown
                 options={[
-
-                ]}
-                optionValue='Filter By'
-                handleSortOrder={this.props.handleSortOrder}
+                      'bug',
+                      'dark',
+                      'dragon',
+                      'electric',
+                      'fairy',
+                      'fighting',
+                      'fire',
+                      'flying',
+                      'ghost',
+                      'grass',
+                      'ground',
+                      'ice',
+                      'normal',
+                      'poison',
+                      'psychic',
+                      'rock',
+                      'steel',
+                      'water'
+                  ]}
+                optionValue='Filter Type'
+                handleSort={this.handleSortType}
                 />
             </div>
         )

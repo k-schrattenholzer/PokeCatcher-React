@@ -22,8 +22,17 @@ body {
 .PokeEl {
   padding: 5px;
   margin: 0px;
+  width: 30%;
   border:#3C403D .5px dashed;
   border-radius: 0%;
+}
+
+.PokeEl >p {
+  background-color:#DADED4;
+  width: min-content;
+  border-radius: 35px;
+  padding:10px;
+  text-align: left;
 }
 
 img {

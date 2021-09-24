@@ -1,6 +1,7 @@
 import React from 'react'
 import request from 'superagent'
 import Header from './components/Header.js'
+import Loading from './components/Loading.js'
 import PokeList from './components/PokeList.js'
 
 export default class PokeGallery extends React.Component {
@@ -37,7 +38,7 @@ export default class PokeGallery extends React.Component {
 
     handleSortType = async (e) => {
         e.preventDefault();
-        await this.setState({sortOrder: e.target.value});
+        await this.setState({type: e.target.value});
         this.fetchUserSearch();
     }
 
@@ -66,10 +67,11 @@ export default class PokeGallery extends React.Component {
                 handleSearch={this.handleSearch}
                 handleChange={this.handleChange}
                 handleSortOrder={this.handleSortOrder}
+                handleSortType={this.handleSortType}
                 />
                 {
                     this.state.areWeLoading
-                    ? <h1>fetching poké babies</h1>
+                    ? <Loading />
                     : <PokeList
                         pokemonData = {this.state.pokemonData}
                         areWeLoading = {this.state.areWeLoading}/>

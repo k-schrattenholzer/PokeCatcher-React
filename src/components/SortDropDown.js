@@ -4,7 +4,7 @@ export default class SortDropDown extends Component {
     render() {
         return (
             <div>
-                <select onChange={this.props.handleSortOrder}
+                <select onChange={this.props.handleSort}
                  >
                     <option value=''>{this.props.optionValue}</option>
                    {
