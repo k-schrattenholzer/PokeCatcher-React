@@ -10,6 +10,11 @@ body {
   background-color: #DADED4; 
 }
 
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2rem;
+}
+
 .PokeGallery {
   display: flex;
   flex-direction: column;
@@ -25,7 +30,7 @@ body {
 }
 
 .SearchSort {
-  margin-top: 2.5%;
+  margin-top: 5.5%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -57,7 +62,12 @@ body {
   padding: 15px;
   margin: 40px;
   width: min-content;
-  border:#3C403D .5px dashed;
+  /* border:#3C403D .5px dashed; */
+  border: 1px solid black;
+  box-shadow:
+  0 0 50px #fff,
+  -10px 0 40px rgb(255, 51, 0),
+  10px 0 40px #0ff;
   border-radius: 20%;
 }
 /* /////////////////////////// */
@@ -75,28 +85,29 @@ body {
   
 }
 
-.Stats >p {
+p {
   color: #DADED4;
-  font-size: 25%;
-  margin-top:0px;
-  width: max-content;
+  background-color: #3C403D;
+  font-size: 30%;
+  /* margin-top:0px;
+  margin-bottom: 0px; */
+  width: 12rem;
+  margin: 15px;
+  border-radius: 35px;
   padding: 12px;
+  line-height: 200%;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: 25px;
 }
 
 
 img {
   height: 12rem;
   padding:20px;
-  border-radius: 60px;
-  box-shadow:
-  inset -20px -20px 60px #fff,
-  inset 10px 0 60px rgb(255, 51, 0),
-  inset -10px 0 60px #0ff,
-  inset -10px 0 40px rgb(255, 51, 0),
-  inset -10px 0 40px #0ff,
-  0 0 50px #fff,
-  -10px 0 40px rgb(255, 51, 0),
-  10px 0 40px #0ff;
+  border-radius: 60px
 }
 
 .App {
