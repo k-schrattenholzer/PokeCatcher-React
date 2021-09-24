@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root{
-  --darkcolor: #3C403D;
-  --transparenthead: #97782456;
-  --lightcolor: #DADED4;
+  --darkercolor: #3C403D;
+  --darkcolor: #8d8491;
+  --transparenthead: #24979167;
+  --lightercolor: #e4ebdb;
+  --lightcolor: #c4c7bf;
   --font:'Press Start 2P', cursive;
 }
 
@@ -13,8 +15,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font);
-  color: var(--darkcolor);
-  background-color: #DADED4; 
+  color: var(--darkercolor);
+  background-color:var(--darkcolor); 
 }
 
 h1 {
@@ -85,6 +87,7 @@ button, input {
   padding: 0px;
   margin-left: 20px;
   margin-top: 150px;
+
 }
 
 .PokeEl {
@@ -95,12 +98,13 @@ button, input {
   padding: 15px;
   margin: 40px;
   width: min-content;
-  border:var(--darkcolor) 4px double;
+  border:var(--darkercolor) 4px double;
   box-shadow:
   0 0 50px #fff,
   -10px 0 40px rgb(255, 51, 0),
   10px 0 40px #0ff;
   border-radius: 35px;
+  background-color: var(--lightcolor);
 }
 /* /////////////////////////// */
 /* glowing effect based on https://codersblock.com/blog/creating-glow-effects-with-css/ */
@@ -112,14 +116,14 @@ button, input {
   align-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 1px solid var(--darkcolor);
+  border: 1px solid var(--darkercolor);
   border-radius: 35px;
   
 }
 
 p {
-  color: var(--lightcolor);
-  background-color: var(--darkcolor);
+  color: var(--lightercolor);
+  background-color: var(--darkercolor);
   font-size: 30%;
   /* margin-top:0px;
   margin-bottom: 0px; */
