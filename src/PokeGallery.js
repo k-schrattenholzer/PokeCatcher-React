@@ -7,7 +7,6 @@ import PokeList from './components/PokeList.js'
 export default class PokeGallery extends React.Component {
 
     state = {
-
         pokemonData: [],
         searchParam: '',
         sortOrder:'asc',
@@ -47,6 +46,11 @@ export default class PokeGallery extends React.Component {
         this.fetchUserSearch();
     }
 
+    handleSortType = async (e) => {
+        await this.setState({sortParam: e.target.value});
+        this.fetchUserSearch();
+    }
+
     fetchUserSearch = async () => {
 
         try {
@@ -72,7 +76,7 @@ export default class PokeGallery extends React.Component {
                 handleSearch={this.handleSearch}
                 handleChange={this.handleChange}
                 handleSortOrder={this.handleSortOrder}
-                handleSortType={this.handleSortParam}
+                handleSortType={this.handleSortType}
                 />
                 {
                     this.state.areWeLoading

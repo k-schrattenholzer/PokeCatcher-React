@@ -6,7 +6,9 @@ export default class SortDropDown extends Component {
             <div>
                 <select onChange={this.props.handleSort}
                  >
-                    <option value=''>{this.props.optionValue}</option>
+                    <option value=''>
+                        {this.props.optionValue}
+                    </option>
                    {
                     this.props.options.map(
                     entry => <option

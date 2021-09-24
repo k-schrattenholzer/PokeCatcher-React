@@ -12,7 +12,7 @@ export default class Header extends Component {
                 handleSearch={this.props.handleSearch}
                 handleChange={this.props.handleChange}
                 handleSortOrder={this.props.handleSortOrder}
-                handleSortType={this.props.handleSortParam}/>
+                handleSortType={this.props.handleSortType}/>
 
             </div>
         )
