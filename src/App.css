@@ -52,19 +52,7 @@ h1 {
   background: var(--transparenthead);
   box-shadow: 0 0 50px rgb(255 255 255 / 27%);
   display: inline-flex;
-  min-height: 10%;
-  height: auto !important; /* min-height hack */
-  height: 10%;
-  margin: 0 auto -21em; /* size of main */
-  color: white;
- 
-
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  justify-content: space-around;
-  align-items: flex-start; */
+  min-height: auto;
 }
 
 .SearchSort {
@@ -132,6 +120,8 @@ button, input {
   width: 100%;
   padding: .5rem;
   margin-top: 15rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 
 }
 
