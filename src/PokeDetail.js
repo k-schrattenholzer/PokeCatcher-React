@@ -23,8 +23,8 @@ export default class PokeDetail extends Component {
             <div>
                 <h3>This is the detail page for pokemon ID: {this.state.pokemon._id}</h3>
 
-                        <PokeItem
-                        {...this.state.pokemon} />
+                <PokeItem
+                    {...this.state.pokemon} />
             </div>
         )
     }

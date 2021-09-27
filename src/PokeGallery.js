@@ -1,8 +1,9 @@
 import React from 'react'
 import request from 'superagent'
-import Header from './components/Header.js'
+import NavHeader from './components/NavHeader.js'
 import Loading from './components/Loading.js'
 import PokeList from './components/PokeList.js'
+import SearchSort from './components/SearchSort.js'
 
 export default class PokeGallery extends React.Component {
 
@@ -12,7 +13,7 @@ export default class PokeGallery extends React.Component {
         sortOrder:'asc',
         sortParam: 'pokemon',
         areWeLoading: false,
-        page: 1
+        currentPage: 1
         }
 
     componentDidMount = async () => {
@@ -53,6 +54,16 @@ export default class PokeGallery extends React.Component {
        await this.fetch();
     }
 
+    handleNextPage = async () => {
+        await this.setState({currentPage: this.state.currentPage + 1})
+        this.fetch();
+    }
+
+    handlePrevPage = async () => {
+        await this.setState({currentPage: this.state.currentPage - 1})
+        this.fetch();
+    }
+
     handleReset = async (e) => {
         await this.setState ({ 
             searchParam: '',
@@ -66,7 +77,7 @@ export default class PokeGallery extends React.Component {
         try {
             await this.setState({ areWeLoading: true })
 
-            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}&sort=${this.state.sortParam}&direction=${this.state.sortOrder}&page=1&perPage=900`);
+            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}&sort=${this.state.sortParam}&direction=${this.state.sortOrder}&page=${this.state.currentPage}&perPage=20`);
 
             await this.setState({
                 pokemonData: response.body.results,
@@ -82,13 +93,19 @@ export default class PokeGallery extends React.Component {
         
         return (
             <div className='PokeGallery'>
-                <Header
-                handleSearch={this.handleSearch}
-                handleChange={this.handleChange}
-                handleSortOrder={this.handleSortOrder}
-                handleSortBy={this.handleSortBy}
-                handleReset={this.handleReset}
-                />
+                <div className='HContainer'>
+                    <NavHeader
+                    handleNextPage={this.handleNextPage}
+                    handlePrevPage={this.handlePrevPage}
+                    currentPage={this.state.currentPage}
+                    />
+                    <SearchSort
+                    handleSearch={this.handleSearch}
+                    handleChange={this.handleChange}
+                    handleSortOrder={this.handleSortOrder}
+                    handleSortBy={this.handleSortBy}
+                    handleReset={this.handleReset} />
+                </div>
                 {
                     this.state.areWeLoading
                     ? <Loading />
