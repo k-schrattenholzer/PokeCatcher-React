@@ -4,6 +4,7 @@ import {
     Route, 
     Switch,
 } from 'react-router-dom';
+import PokeDetail from './PokeDetail.js';
 import PokeGallery from './PokeGallery.js';
 import Home from './Home.js';
 import './App.css';
@@ -25,9 +26,9 @@ export default class App extends Component {
                             render={(routerProps) => <PokeGallery {...routerProps} />} 
                         />
                         <Route 
-                            path="/pokemon/:pokemon_id" 
+                            path="/Pokedex/:PokemonId" 
                             exact
-                            render={(routerProps) => <PokeGallery {...routerProps} />} 
+                            render={(routerProps) => <PokeDetail {...routerProps} />} 
                         />
                     </Switch>
                 </Router>
