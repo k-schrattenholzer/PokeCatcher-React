@@ -9,27 +9,22 @@ export default class PokeDetail extends Component {
     }
 
     componentDidMount = async() => {
-            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex/${this.props.match.params.PokemonId}`);
+            const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex/${this.props.match.params.pokemonId}`);
 
-            this.setState({
-                pokemonData: response.body,
-            })
-            console.log(response)
+            await this.setState({
+                pokemon: response.body}
+                )
+                console.log(response.body)
     }
-
     
     render() {
 
         return (
             <div>
-                <h3>This is the detail page for pokemon ID: {this.props.match.params.PokemonId}</h3>
-                {
-                    this.state.pokemon
-                    .map( pokebaby => 
+                <h3>This is the detail page for pokemon ID: {this.state.pokemon._id}</h3>
 
-                        <PokeItem {...pokebaby} 
-                        key={pokebaby._id} />)
-                }
+                        <PokeItem
+                        {...this.state.pokemon} />
             </div>
         )
     }
