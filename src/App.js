@@ -24,6 +24,11 @@ export default class App extends Component {
                             exact
                             render={(routerProps) => <PokeGallery {...routerProps} />} 
                         />
+                        <Route 
+                            path="/pokemon/:pokemon_id" 
+                            exact
+                            render={(routerProps) => <PokeGallery {...routerProps} />} 
+                        />
                     </Switch>
                 </Router>
             </div>

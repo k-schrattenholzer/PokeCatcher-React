@@ -19,9 +19,9 @@ export default class PokeGallery extends React.Component {
        await this.fetch();
     }
     
-    handleChange = (e) => {
+    handleChange = async (e) => {
         e.preventDefault();
-        this.setState({searchParam: e.target.value});
+        await this.setState({searchParam: e.target.value});
     }
 
     handleSearch = (e) => {
@@ -54,7 +54,7 @@ export default class PokeGallery extends React.Component {
     }
 
     handleReset = async (e) => {
-        this.setState ({ 
+        await this.setState ({ 
             searchParam: '',
             sortOrder:'asc',
             sortParam: 'pokemon', })
@@ -64,17 +64,17 @@ export default class PokeGallery extends React.Component {
     fetch = async () => {
 
         try {
-            this.setState({ areWeLoading: true })
+            await this.setState({ areWeLoading: true })
 
             const response = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.searchParam}&sort=${this.state.sortParam}&direction=${this.state.sortOrder}&page=1&perPage=900`);
 
-            this.setState({
+            await this.setState({
                 pokemonData: response.body.results,
                 areWeLoading: false
             })
 
         } catch(e) {
-                this.setState({ isLoading: false });
+                await this.setState({ isLoading: false });
         }
     }
 
