@@ -85,7 +85,7 @@ body {
   }
   
   .HContainer {
-  position: fixed;
+
   height: fit-content;
   width: 100%;
   margin: 1%;
@@ -96,6 +96,16 @@ body {
   display: inline-flex;
   min-height: auto;
   }
+
+  .SearchContainer {
+
+  height: fit-content;
+  width: 100%;
+  margin-top: 60px;
+  padding: 2rem;
+  min-height: auto;
+    }
+
   .PokeGallery {
   display: flex;
   flex-direction: column;
@@ -170,7 +180,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
   padding: .5rem;
-  margin-top: 15rem;
+  margin-top: 5rem;
   margin-left: 5rem;
   margin-right: 5rem;
 

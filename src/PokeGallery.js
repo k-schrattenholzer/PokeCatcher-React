@@ -1,11 +1,12 @@
 import React from 'react'
 import './App.css';
 import request from 'superagent'
-import NavHeader from './components/NavHeader.js'
 import Loading from './components/Loading.js'
 import PokeList from './components/PokeList.js'
 import SearchSort from './components/SearchSort.js'
 import Footer from './components/Footer.js';
+import GalleryHeader from './components/GalleryHeader.js';
+import Header from './components/Header.js';
 
 export default class PokeGallery extends React.Component {
 
@@ -95,25 +96,24 @@ export default class PokeGallery extends React.Component {
         
         return (
             <div className='PokeGallery'>
-                <div className='HContainer'>
-                    <NavHeader
-
-                    />
-                    <SearchSort
-                    handleSearch={this.handleSearch}
-                    handleChange={this.handleChange}
-                    handleSortOrder={this.handleSortOrder}
-                    handleSortBy={this.handleSortBy}
-                    handleReset={this.handleReset} />
-                </div>
                 
-                {
-                    this.state.areWeLoading
-                    ? <Loading />
-                    : <PokeList
-                        pokemonData = {this.state.pokemonData}
-                        areWeLoading = {this.state.areWeLoading}/>
-                }
+                <Header />
+                <div className='SearchContainer'>
+                    <GalleryHeader
+                        handleSearch={this.handleSearch}
+                        handleChange={this.handleChange}
+                        handleSortOrder={this.handleSortOrder}
+                        handleSortBy={this.handleSortBy}
+                        handleReset={this.handleReset}  />
+                    
+                    {
+                        this.state.areWeLoading
+                        ? <Loading />
+                        : <PokeList
+                            pokemonData = {this.state.pokemonData}
+                            areWeLoading = {this.state.areWeLoading}/>
+                    }
+                </div>
                 
                 <Footer
                     handleNextPage={this.handleNextPage}
