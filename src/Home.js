@@ -8,7 +8,9 @@ export default class Home extends Component {
             <div className="Home">
                 <h1>Wanna see some pokés?</h1>
                 
-                <Link to='/gallery'>
+                <Link 
+                to='/gallery'
+                class='GalleryLink'>
                   check out the pokedex  
                 </Link>
             </div>

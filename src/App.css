@@ -10,8 +10,16 @@
   --font:'Press Start 2P', cursive;
 }
 
-.App {
-  margin-top:100px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  color: var(--darkercolor);
+  background-color:var(--darkcolor); 
+  }
+
+.root {
+
 }
 
 
@@ -39,16 +47,35 @@
       }
 }
 
-body {
+
+
+/**************************LANDING PAGE**************************/
+.Home {
   display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font);
-  color: var(--darkercolor);
-  background-color:var(--darkcolor); 
+  position: relative;
+  margin-top: 30rem;
+  left: 5%;
+  width: 90%;
+  height: 8rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.GalleryLink {
+  color: var(--lightercolor);
+}
+
+/**************************LOADING EL**************************/
+  .Loading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   }
 
+/**************************MAIN GALLERY PAGE**************************/
+
+/******HEADER******/
   h1 {
   position: relative;
   font-size: 2rem;
@@ -56,22 +83,7 @@ body {
   margin: 1rem;
   padding:1rem;
   }
-
-  .Loading {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  }
-
-  .PokeGallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  align-content: space-between;
-  justify-content: flex-start;
-  }
-
+  
   .HContainer {
   position: fixed;
   height: fit-content;
@@ -84,6 +96,15 @@ body {
   display: inline-flex;
   min-height: auto;
   }
+  .PokeGallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: flex-start;
+  }
+
 
   .SearchSort {
   padding: .5%;
@@ -212,10 +233,16 @@ body {
 .active {
   border:1px dotted black;
   font-size: 110%;
+  background-color: rgba(88, 0, 44, 0.644);
+  box-shadow: rgba(255, 105, 180, 0.712) 1px 1px;
 
 }
-
+.NavEl {
+  width: fit-content;
+  height: fit-content;
+}
 .NavLink {
+  font-size: 10%;
   z-index: max;
   border-radius: 100%;
   padding: 20px;
@@ -241,14 +268,9 @@ body {
   font-size: 110%;
 }
 
-.Home {
+/**********************Footer**********************/
+
+.Pagination {
   display: flex;
-  position: relative;
-  margin-top: 30rem;
-  left: 5%;
-  width: 90%;
-  height: 8rem;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
