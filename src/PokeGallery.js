@@ -1,9 +1,11 @@
 import React from 'react'
+import './App.css';
 import request from 'superagent'
 import NavHeader from './components/NavHeader.js'
 import Loading from './components/Loading.js'
 import PokeList from './components/PokeList.js'
 import SearchSort from './components/SearchSort.js'
+import Footer from './components/Footer.js';
 
 export default class PokeGallery extends React.Component {
 
@@ -95,9 +97,7 @@ export default class PokeGallery extends React.Component {
             <div className='PokeGallery'>
                 <div className='HContainer'>
                     <NavHeader
-                    handleNextPage={this.handleNextPage}
-                    handlePrevPage={this.handlePrevPage}
-                    currentPage={this.state.currentPage}
+
                     />
                     <SearchSort
                     handleSearch={this.handleSearch}
@@ -106,6 +106,7 @@ export default class PokeGallery extends React.Component {
                     handleSortBy={this.handleSortBy}
                     handleReset={this.handleReset} />
                 </div>
+                
                 {
                     this.state.areWeLoading
                     ? <Loading />
@@ -114,6 +115,10 @@ export default class PokeGallery extends React.Component {
                         areWeLoading = {this.state.areWeLoading}/>
                 }
                 
+                <Footer
+                    handleNextPage={this.handleNextPage}
+                    handlePrevPage={this.handlePrevPage}
+                    currentPage={this.state.currentPage}/>
             </div>
         )
     }

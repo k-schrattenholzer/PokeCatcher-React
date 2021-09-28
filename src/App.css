@@ -10,6 +10,11 @@
   --font:'Press Start 2P', cursive;
 }
 
+.App {
+  margin-top:100px;
+}
+
+
 @media only screen and (max-width:700px) {
 
     .PokeGallery {
@@ -204,6 +209,46 @@ body {
   border-radius: 60px
   }
 
-  .App {
-  text-align: center;
-  }
+.active {
+  border:1px dotted black;
+  font-size: 110%;
+
+}
+
+.NavLink {
+  z-index: max;
+  border-radius: 100%;
+  padding: 20px;
+  height: fit-content;
+  margin-top: 60rem;
+  color: white;
+
+}
+
+.Loading {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  justify-content: center;
+  align-content: center;}
+
+.PokeDetail {
+  display: flex;
+  color: aqua;
+}
+
+.Name {
+  font-size: 110%;
+}
+
+.Home {
+  display: flex;
+  position: relative;
+  margin-top: 30rem;
+  left: 5%;
+  width: 90%;
+  height: 8rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
