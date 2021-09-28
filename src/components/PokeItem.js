@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class PokeItem extends Component {
     render() {
         return (
             <div className='PokeEl' >
                 <h2>{this.props.pokemon}</h2>
-                <a 
-                href={this.props.pokedex} 
-                target="_blank" 
-                rel="noreferrer">
+                <Link to={`/Pokedex/${this.props._id}`}>
                     <img 
                     src={this.props.url_image} 
-                    alt={this.props.pokemon}
-                    // style={
-                    //     {border: `5px solid ${this.props.color_1}`}}
-                        /> 
-                </a>
+                    alt={this.props.pokemon}/> 
+                </Link>
                  
                 <div className='Stats'
                 style={
