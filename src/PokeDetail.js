@@ -3,6 +3,7 @@ import request from 'superagent'
 import PokeItem from './components/PokeItem.js'
 import PokeInfo from './components/PokeInfo.js'
 import Loading from './components/Loading.js'
+import Header from './components/Header.js'
 
 
 export default class PokeDetail extends Component {
@@ -33,6 +34,7 @@ export default class PokeDetail extends Component {
 
         return (
             <div className="PokeDetail">
+                <Header />
                 <header>
                     <h3>This is the detail page for: {this.state.pokemon.pokemon}</h3>
                     </header>
