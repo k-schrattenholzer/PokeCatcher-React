@@ -14,12 +14,7 @@ export default class App extends Component {
         return (
             <div >
                 <Router>
-                    <NavLink exact activeClassName="active" 
-                    to='/'
-                    className="NavLink">home</NavLink>
-                    <NavLink exact activeClassName="active" 
-                    to='/Gallery'
-                    className="NavLink">pokedex</NavLink>
+                    
                         <Route 
                             path="/" 
                             exact
@@ -35,6 +30,16 @@ export default class App extends Component {
                             exact
                             render={(routerProps) => <PokeDetail {...routerProps} />} 
                         />
+                        <NavLink
+                            exact activeClassName="active" 
+                            to='/'
+                            className="NavLink">
+                                home</NavLink>
+                            <NavLink
+                            exact activeClassName="active" 
+                            to='/Gallery'
+                            className="NavLink">
+                                pokedex</NavLink>
                 </Router>
             </div>
         )
